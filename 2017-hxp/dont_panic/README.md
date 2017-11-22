@@ -5,13 +5,19 @@ When running the binary and entering some input, we get "Nope."
 So, we can search for the string to get the main function.
 
 Searching a sequence of bytes for "Nope." reveals:
+!["Nope." search](1.png)
 
-
+!["Nope." location](2.png)
 
 Now, we can see where the bad-boy is. Close to it is the good-boy message.
 
+![good/bad boy](3.png)
 
-The flag is checked for length 42, and if it is - it is then checked byte by byte.
+The flag is checked for length 42, and if it is that long - it is then checked byte by byte.
+
+![Length check](4.png)
+![byte check](5.png)
+
 I didn't bother with the check as this is only a few thousands checks. Instead, I used gdb to break on the location of the bad-boy, checked the current index of the fail, and changed the flag accordingly.
 
 gdb_script : 
